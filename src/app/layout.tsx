@@ -6,8 +6,8 @@ import { Providers } from '@/components'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Teslo|Shop',
-    default: 'Home - Teslo|Shop'
+    template: '%s - Healthy|Shop',
+    default: 'Home - Healthy|Shop'
   },
   description: 'e-comerce shop',
 }
@@ -19,7 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} body-background`}>
+      <div className='body-background'></div>
+      <body className={`${inter.className}`}>
         <Providers>
           {children}
         </Providers>
