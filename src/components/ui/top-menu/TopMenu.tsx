@@ -3,7 +3,9 @@ import { titleFont } from '@/config/fonts';
 import { useCartStore, useUiStore } from '@/store';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { IoCartOutline, IoSearchOutline } from 'react-icons/io5';
+import { GiThreeLeaves } from 'react-icons/gi';
+import { HiMiniShoppingBag } from 'react-icons/hi2';
+import { IoSearchOutline } from 'react-icons/io5';
 
 export const TopMenu = () => {
   const openSideMenu = useUiStore((state) => state.openSideMenu);
@@ -16,39 +18,49 @@ export const TopMenu = () => {
   }, []);
 
   return (
-    <nav className='flex px-5 justify-between items-center w-full'>
-      <div className=''>
-        <Link href='/'>
-          <span className={`${titleFont.className} antialiased font-bold`}>
-            Teslo
+    <nav className={`${titleFont.className} flex mt-5 p-5 rounded-full justify-between items-center mx-10 bg-white bg-opacity-35 shadow-lg`}>
+      <div className='text-green-600'>
+        <Link href='/' className="flex flex-row gap-2">
+          <span className={`${titleFont.className} antialiased font-bold flex flex-row justify-center items-center`}>
+            <GiThreeLeaves size={20}/>
+            Healthy
           </span>
           <span> | Shop</span>
         </Link>
       </div>
 
       {/* Center Menu */}
-      <div className='hidden sm:block'>
+      <div className='hidden sm:block font-bold  text-lg'>
         <Link
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
-          href='/gender/men'
+          className='m-2 p-2 rounded-md transition-all text-green-800 hover:text-green-600'
+          href='/'
         >
-          Men
+          Products
         </Link>
+        <span className="font-normal text-green-800">|</span>
         <Link
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className='m-2 p-2 rounded-md transition-all text-green-800 hover:text-green-600'
           href='/gender/women'
         >
-          Women
+          Posts
         </Link>
+        <span className="font-normal text-green-800">|</span>
         <Link
-          className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+          className='m-2 p-2 rounded-md transition-all text-green-800 hover:text-green-600'
           href='/gender/kids'
         >
-          Kids
+          Events
+        </Link>
+        <span className="font-normal text-green-800">|</span>
+        <Link
+          className='m-2 p-2 rounded-md transition-all text-green-800 hover:text-green-600'
+          href='/gender/kids'
+        >
+          Contact
         </Link>
       </div>
 
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-1 text-green-800'>
         <Link href='/search' className='m-2'>
           <IoSearchOutline className='w-5 h-5' />
         </Link>
@@ -62,7 +74,7 @@ export const TopMenu = () => {
                 {totalItemsInCart}
               </span>
             )}
-            <IoCartOutline className='w-5 h-5' />
+            <HiMiniShoppingBag className='w-5 h-5' />
           </div>
         </Link>
 
