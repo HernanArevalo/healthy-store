@@ -18,8 +18,8 @@ export const TopMenu = () => {
   }, []);
 
   return (
-    <nav className={`${titleFont.className} flex mt-5 p-5 rounded-full justify-between items-center mx-10 bg-white bg-opacity-35 shadow-lg`}>
-      <div className='text-green-600'>
+    <nav className={`${titleFont.className} flex mt-5 p-5 rounded-full justify-between items-center bg-white mx-10 z-10 shadow-lg`}>
+      <div className='text-green-600 bg-red'>
         <Link href='/' className="flex flex-row gap-2">
           <span className={`${titleFont.className} antialiased font-bold flex flex-row justify-center items-center`}>
             <GiThreeLeaves size={20}/>
